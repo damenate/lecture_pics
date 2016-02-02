@@ -1,0 +1,57 @@
+<nav class="top-bar" role="navigation" aria-hidden="true" data-options="mobile_show_parent_link: false" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1>
+        <%= link_to 'TIYD-Rails TA Page', "#", class:"center" %>
+      </h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+  </ul>
+  <section class="top-bar-section">
+    <ul class="right">
+      <li class="divider"></li>
+      <li class="has-dropdown">
+        <a href="#">Contribute</a>
+        <ul class="dropdown">
+          <li>
+            <%= link_to '<i class="fa fa-code-fork fa-fw fa-lg" title="GitHub"></i>&nbsp; Repo'.html_safe,
+                'https://github.com/jmbuscemi/lecture_pics', target: "_blank" %>
+          </li>
+          <li class="divider"></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</nav>
+
+<%= render partial: 'layouts/alert' %>
+<div class="large-3 large-centered columns">
+  <div class="login-box">
+    <div class="row">
+      <div class="large-12 columns">
+        <%= form_tag login_path do %>
+          <div class="row">
+            <div class="large-12 columns">
+              <%= text_field_tag :email, nil, placeholder: "Email" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <%= password_field_tag :password, nil, placeholder: "Password" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 large-centered columns">
+              <%= submit_tag "Login", class: "button expand"%>
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-12 large-centered columns" id="sign-up-link" >
+              <%= link_to "Sign Up", new_user_path %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

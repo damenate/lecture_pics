@@ -1,0 +1,23 @@
+// Styles related to the Sessions controller here
+.login-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  margin: 75px 0;
+  padding: 40px 20px 0 20px;
+}
+
+#sign-up-link {
+  text-align: center;
+  padding-bottom: 20px;
+  width: auto;
+  left: 0px;
+  color: #333;
+}
+
+#sign-up-link a:visited{
+  color: #333;
+}
+
+#sign-up-link a:hover{
+  color: #007095;
+}

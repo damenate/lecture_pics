@@ -1,0 +1,103 @@
+<nav class="top-bar" role="navigation" aria-hidden="true" data-options="mobile_show_parent_link: false" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1>
+        <a href="#">
+          TIYD-Rails TA Page
+        </a>
+      </h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+  </ul>
+  <section class="top-bar-section">
+    <ul class="right">
+      <li class="divider"></li>
+      <li class="has-dropdown">
+        <a href="#"><i class = 'fa fa-user fa-lg fa-fw'></i>&nbsp; <%= @user.name %></a>
+        <ul class="dropdown">
+          <li>
+            <%= link_to '<i class="fa fa-pencil fa-fw" title="Edit"></i>&nbsp; Edit'.html_safe,
+                edit_user_path(@user) %>
+          </li>
+          <li>
+            <%= link_to '<i class="fa fa-power-off fa-fw" title="Log Out"></i>&nbsp; Log Out'.html_safe,
+                logout_path %>
+          </li>
+          <li class="divider"></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</nav>
+
+<%= render partial: 'layouts/alert' %>
+
+
+<div class="row">
+  <div class="medium-7 large-6 columns">
+    <h4>Upload Today's Lecture Pictures</h4>
+  </div>
+</div>
+<div class="row">
+  <%= form_for @picture, html: { multipart: true } do |f| %>
+    <div class="small-8 columns">
+      <%= f.file_field :uploaded_file %>
+    </div>
+    <div class=" columns">
+      <%= f.submit 'Upload', class: "radius button tiny" %>
+    </div>
+  <% end %>
+</div>
+<div class="row">
+  <hr>
+</div>
+<div class="row">
+  <div class="large-12 columns">
+    <div class="section-container tabs" data-section>
+      <section class="section">
+        <h5 class="title">Uploaded Pictures</h5>
+      </section>
+    </div>
+  </div>
+</div>
+<div class="row">
+    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+      <% @pictures.each do |picture| %>
+        <li>
+          <div class="small-12 columns">
+            <div class="show-image">
+              <%= image_tag picture.uploaded_file.url(:medium), class: "image-box" %>
+              <%= text_field_tag picture.uploaded_file_file_name, class:"picture-title" %>
+              <%= link_to '<i class="fa fa-trash" title="Delete"></i>'.html_safe,
+                  picture ,method: :delete, data: { confirm: 'Are you sure?' }, class:"delete", id:"delete-icon" %>
+            </div>
+          </div>
+          <div class="small-9 columns copy-input-div">
+            <input type="text" name="box-content" id="copy-text-<%=picture.id%>"
+                value="<%=picture.uploaded_file.url%>" class="image-url-box" tabindex="1"/>
+          </div>
+          <div class="small-3 end columns">
+            <span class="postfix copy-button" id="clip-button" data-clipboard-target="#copy-text-<%=picture.id%>" data-clipboard-action="copy" data-tooltip aria-haspopup="true" class="has-tip tip-bottom" title="Copy URL to Clipboard...">
+              <span>
+                <i class="fa fa-clipboard"></i>
+              </span>
+            </span>
+            </input>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+</div>
+
+<footer class="row">
+  <div class="large-12 columns">
+    <hr/>
+    <div class="row">
+      <div class="large-6 columns">
+        <p>It is not the length of life, but the depth. -Emerson</p>
+      </div>
+      <div class="large-6 columns">
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,72 @@
+// Styles related to the Image URL Box here
+input.image-url-box {
+  padding: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+  border: 1px solid rgb(119, 119, 119);
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  color: rgba(0, 0, 0, 0.75);
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+
+.button.tiny.copybutton {
+  height: 100%;
+}
+
+.input-group input:first-child, .input-group-button:first-child .button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group input, .input-group-button {
+  display: table-cell;
+}
+
+.input-group input {
+  position: relative;
+  width: 100%;
+}
+
+.fa.fa-clipboard {
+  font-size: 1.4em;
+}
+
+#clip-button {
+  border: 1px solid rgb(119, 119, 119);
+  border-left-width: 0px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.copy-input-div {
+  padding-left: 15px;
+  padding-right: 0;
+}
+
+.small-3.end.columns {
+  padding-right: 35px;
+  padding-left: 0;
+}
+
+.small-3.end.columns :hover {
+  background: #CECECE;
+  cursor: pointer;
+}
+
+#image-title-box{
+  text-align: left;
+}
+
+span.postfix {
+  background: #fff;
+  color: #333333;
+  border-color: #cccccc;
+}
+
+#clip-button:active {
+  border: .14rem solid #008CBA;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
