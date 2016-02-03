@@ -32,7 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'puma'
+# gem 'puma'
 gem 'aws-sdk', '~> 1.6'
 gem 'paperclip'
 gem 'foundation-rails'
